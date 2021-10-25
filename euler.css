@@ -1,0 +1,329 @@
+/* 
+===========================
+    1.  NORMALIZE
+===========================
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.img {
+    max-width: 100%;
+}
+
+:root {
+    /* achtergrondkleuren */
+    --grijs-1: #272727;
+    --grijs-2: #373737;
+    --grijs-3: #474747;
+    --grijs-4: #575757;
+    --grijs-5: #ECECEC;
+    --grijs-6: #F5F5F5;
+    --wit-1: #FFF;
+    
+    /* tekstkleuren */
+    --tekstkleur-donker: #222222;
+    --tekstkleur-licht: #F5F5F5;
+
+    /* accentkleuren */
+    --accent-rood: #FF0000;
+    --accent-blauw: #5C90DB;
+    --accent-roze: #FFC0CB;
+
+    /* kleuren tekstvak */
+    --col-donker700: rgb(115, 115, 115);
+    --col-banner: rgba(115, 115, 115, .95);       /* kleur voor banners en voor menu in mobile-design */
+    --col-case: rgba(115, 115, 115, .5);
+    --col-accent: rgb(81, 80, 134);
+    --col-skills: rgba(81, 80, 134, .6);
+    --col-licht300: #e4e4e4;
+
+    /* font-sizes */
+    --fs-h1: 2.25rem;
+    --fs-h1-groot: 2.5rem;
+    --fs-h2: 1.5rem;
+    --fs-h2-groot: 1.7rem;
+    --fs-p: 1rem;
+    --fs-em: 1.2rem;
+    --fs-data: 0.8rem;
+}
+
+/* 
+===========================
+    2.  ALGEMEEN
+===========================
+*/
+
+.achtergrond {
+    background-image: url(../img/achtergrond--mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header,
+.main {
+    text-align: center;
+}
+
+.wikkel {
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+/* 
+===========================
+    3.  HEADER
+===========================
+*/
+
+.header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header__titel {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--col-accent);
+}
+
+
+/* 
+===========================
+    4.  SECTION-OEFENINGEN
+===========================
+*/
+
+.main__grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-auto-rows: repeat(100%);
+    padding: 2rem 0;
+}
+
+.oefening {
+    background-color: var(--col-licht300);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .2);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.oefening__titel {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--col-donker700);
+    margin-bottom: 1rem;
+}
+
+.oefening__vraagstuk {
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--col-accent);
+}
+
+.oplossing__tekst {
+    font-size: .9rem;
+    line-height: 1.5;
+    color: var(--col-donker700);
+    margin: 1rem 0;
+}
+
+.oplossing__uitkomst {
+    font-weight: bold;
+    color: var(--col-accent);
+}
+
+/* 
+===========================
+    5.  INTRO (tekst-kader)
+===========================
+*/
+
+.tekstvak {
+    background-color: rgba(0, 0, 0, .7);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro {
+    text-align: center;
+    background-image: url(../img/achtergrond--mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.intro__wikkel {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: start;
+    color: var(--col-donker700);
+    margin-bottom: 6rem;
+}
+
+.extra {
+    font-style: normal;
+    font-weight: 700;
+}
+
+
+.intro__titel {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--col-accent);
+    margin-bottom: 2rem;
+}
+
+.intro__tekst {
+    font-size: .9rem;
+    line-height: 1.6;
+    color: var(--col-donker700);
+    max-width: 50ch;
+    margin: 0 auto 1rem;
+}
+
+.intro__tekst:nth-of-type(3) {
+    margin-bottom: 3rem;
+}
+
+.intro__link,
+.euler__link {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--col-accent);
+    position: relative;
+}
+
+.intro__link:hover,
+.intro__link:focus, 
+.euler__link:hover,
+.euler__link:focus {
+    outline: none;
+}
+
+.intro__link::after,
+.euler__link::after {
+    background-color: currentColor;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1.5px;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in;
+
+}
+
+.intro__link:hover::after,
+.intro__link:focus::after,
+.euler__link:hover::after,
+.euler__link:focus::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.intro__knop {
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: transparent;
+    color: var(--col-accent);
+    border: 2px solid var(--col-accent);
+    border-radius: 5px;
+    padding: .5rem .75rem;
+}
+
+.intro__knop:hover,
+.intro__knop:focus {
+    cursor: pointer;
+    outline: none;
+    background-color: var(--col-accent);
+    color: var(--col-licht300);
+}
+
+.onzichtbaar {
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+    position: absolute;
+    z-index: -999;
+}
+
+/* 
+===========================
+    6.  ASIDE
+===========================
+*/
+
+.euler {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.euler__img {
+    border-radius: 5px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .2);
+    margin-bottom: 2rem;
+}
+
+/* 
+===========================
+    7.  RESPONSIVE DESIGN
+===========================
+*/
+
+@media (min-width: 640px) {
+    .intro {
+        width: 70%;
+        max-width: 700px;
+        height: 80%;
+        border-radius: 5px;
+    }    
+
+    .euler {
+        flex-direction: row;
+    }
+    
+    .euler__img {
+        margin: 0;
+    }
+}
+
